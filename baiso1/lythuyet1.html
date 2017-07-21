@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="UTF-8">
+  <title>Lý thuyết 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div>
+	<!-- start div Information -->
+		<h3 class ="Player_profile">Player Profile</h3>
+		<img class ="img_info" src="images/avatar.gif" alt="avatar">
+		<p class = "personal_info">
+			Ten: Nguyen Xuan Nam<br/>
+			Noi sinh: Ha noi<br/>
+			Ngay sinh: 28/11/1990<br/>
+			Vi tri: Teamlear<br/>
+			Cao: 170cm<br/>
+			Nang: 65kg
+		</p>
+	</div>
+	<!--end div -->
+	<!--Start div fact-->
+	<div class= "Fact">
+		<h3>Facts:</h3>
+		<ul>
+			<li><img src="images/star.gif" alt="star1"> Nam gia nhap The Cong nam 1999</li>
+			<li><img src="images/star.gif" alt="star2"> Trong suot thoi trai tre gia nhap The cong Nam da ghi duoc 160 ban thang trong vong 7 nam</li>
+			<li><img src="images/star.gif" alt="star3"> Nam choi tran dau tien cho U21 Viet Nam vao do tuoi 16</li>
+			<li><img src="images/star.gif" alt="star4"> Nam da dat cup U21 cho Viet Nam vao nam 2007</li>
+			<li><img src="images/star.gif" alt="star5"> Nam da dat cup cau thu xuat sac nhat trong nam</li>
+		</ul>
+	</div>
+	<!--End div fact-->
+	<div class ="Post">
+		<p class = "post_contain">
+			Nam choi cho cau lac bo the cong <br/>
+			The cong dat cup vo dich
+			<p class = "post_info">Posted by <a>The cong`s Fan</a> 20/12/2007</p>
+		</p>
+		<!--Deafault margin windown is 10,so make margin 0-->
+		<p class = "post_contain">
+			Nam la cau thu choi rat hay o The cong <br/>
+			<!-- Must use &lt; instead of <  -->
+			Va anh ta da chuyen toi Hoa Phat &lt;&gt;:)
+		</p>
+		<p class = "post_info">Posted by <a>Hoa phat`s Fan</a> 20/12/2007</p>
+	</div>
+	<div class ="Comment">
+		<h3>Your Comment</h3>
+		<table>
+			<tr>
+				<td>Your name<td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td id="your_email">Your email(will not public)<td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>Comment<td>
+				<td><textarea id="textarea_comment" cols="40" rows="4">Your comment here &lt;/textarea&gt;</textarea></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
