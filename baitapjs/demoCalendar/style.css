@@ -1,0 +1,10 @@
+#day {
+	display: none;
+	border: 1px;
+}
+#div_contain {
+	margin-top: 50px;
+}
+.table td:hover {
+	background-color:red;
+}
