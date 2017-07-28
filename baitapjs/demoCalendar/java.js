@@ -9,7 +9,6 @@ var currentday = date.getDate();// get current day
 var curentmonth = date.getMonth();
 var currentyear = date.getFullYear();
 var flag = false;
-
 function callfunction() {
 	div.style.display = "block"; // when user click on input table will appear
 	var firstDay = new Date(year, month, 1).toDateString();   // 1 7 2017
@@ -22,6 +21,9 @@ function callfunction() {
 		get_calendar(days ,index_day);
 	}
 }
+/* Create canlendar 
+	
+*/
 function get_calendar(days ,index_day) {
 	var table = document.createElement('table');
 	table.setAttribute('class','table');
