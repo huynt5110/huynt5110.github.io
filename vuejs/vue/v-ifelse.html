@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js Show Hide</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="show = !show">Show / Hide</button>
+		<p v-if="show">Part time visible</p>
+		<p v-else>Am I visible ?</p>
+		<p v-show = "show">This is show case</p>
+	</div>
+	<script>
+	/* v-if v-else : p will disable form html.
+		v-show: set style display: none.
+	*/
+		new Vue({
+			el: '#app',
+			data: {
+				show: true
+			}
+		});
+	</script>
+</body>
+</html>

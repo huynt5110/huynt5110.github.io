@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<h1>Gioi Thieu Ve Vue </h1>
+	<div id ="app">
+			<button v-on:click="increment">increment</button>
+			<p>Counter: {{counter}}</p>
+			<p>ClickS: {{clicks}}</p>
+	</div>
+	<script>
+	/* if wanna user computed , dont define varible in data.
+	*/
+		new Vue({
+			el: '#app',
+			data: {
+				clicks: 0
+			},
+			methods: {
+				increment() {
+				this.clicks++;
+				}
+			},
+			computed: {
+				counter:function() {
+				return this.clicks * 2;
+				}
+			}
+		});	
+	</script>
+</body>
+</html>

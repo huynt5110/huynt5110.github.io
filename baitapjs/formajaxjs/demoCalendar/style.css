@@ -1,0 +1,19 @@
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	margin-left: 200px;
+}
+#div_contain {
+	margin-top: 20px;
+}
+.table {
+	background: url("images/img_1.jpg") left top no-repeat;
+	vertical-align: top;
+}
+.table td {
+	  width: 60px;
+}
+.table td:hover {
+	background-color:#1ac6ff;
+}

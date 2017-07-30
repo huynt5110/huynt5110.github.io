@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js V-for</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id ="app">
+		<ul>
+			<li v-for="person in persons">{{person.name}}</li>
+		</ul>
+	</div>
+	<script>
+	// v-for create li for every json object
+		new Vue({
+			el: '#app',
+			data: {
+				persons: [
+					{name: 'Huy', age: 22},
+					{name: 'Lan', age: 27},
+					{name: 'My', age: 23},
+					{name: 'Hoa', age: 18},
+					{name: 'Hung', age: 23}
+				]
+			}
+		});	
+	</script>
+</body>
+</html>

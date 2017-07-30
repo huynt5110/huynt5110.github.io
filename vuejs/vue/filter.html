@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js V-for</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id ="app">
+		<p>{{title | uppercase | lowercase}}</p>
+	</div>
+	<script> 
+	//khai bao kieu 1  filter khong co s
+ 		Vue.filter('uppercase',function(value) {
+			return value.toUpperCase();
+		});
+		new Vue({
+			el: '#app',
+			data: {
+				title: 'hello'
+			},
+		computed: {
+			thetitle: function() {
+				return this.title.toUpperCase();
+			}
+		},
+		// khao bao kieu 2 filter co s
+		filters: {
+			lowercase: function(value) {
+				return value.toLowerCase();
+			}
+		}
+	});
+	</script>
+</body>
+</html>

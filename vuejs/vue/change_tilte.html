@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js ChangeMethod</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<h1>Change Title </h1>
+	<div id ="app">
+			<button v-on:click="changeTitle">changeTitle</button>
+			<p>Counter: {{title}}</p>
+	</div>
+	
+	<script>
+	/*use v-on to catch click event
+	el : call div, data is value 
+	****note: must have this before variable.
+	*/
+		new Vue({
+			el: '#app',
+			data: {
+				title: 'first tilte'
+			},
+			methods: {
+				changeTitle() {
+				this.title = 'new'
+				}
+			}
+		});	
+	</script>
+</body>
+</html>
