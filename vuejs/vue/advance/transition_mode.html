@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<h1>Button Baseon bind:key </h1>
+	<div id="app">
+		<transition>
+			<button v-bind:key="isEditing">{{ isEditing ? 'Save' : 'Edit' }}</button>
+		</transition>
+	</div>
+	<script>
+	new Vue({
+		el: '#app',
+		data: {
+			isEditing: false  //if false button = edit; else button = save
+		}
+	});
+	</script>
+</body>
+</html>

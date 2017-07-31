@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js ChangeMethod</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+	<link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Change Title </h1>
+	<div id="app">
+	  <button v-on:click="show = !show" >Click me</button>
+	  <transition
+			enter-active-class="animated flipInX"
+			leave-active-class="animated flipOutX">
+			<p v-if="show">hello</p>
+	  </transition>
+	</div>
+	
+	<script>
+	new Vue ({
+		el: '#app',
+		data: {
+			show : true
+		}
+	});
+	</script>
+</body>
+</html>

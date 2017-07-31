@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js Form Input</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id ="app">
+		<first-component></first-component>
+		<p>This i p tag</p>
+		<first-component></first-component>
+	</div>
+	<script>
+	Vue.component('first-component',{
+		template: '<div>This is div inside component so we can reuse what ever we want</div>'
+	})
+		new Vue({
+			el: '#app',
+			data: {
+				
+			}
+		});	
+	</script>
+</body>
+</html>

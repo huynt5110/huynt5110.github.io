@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js JavaSript Hook</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+</head>
+<body>
+	<h1>Change Title </h1>
+	<div id="app">
+	  <button v-on:click="show = !show" >Click me</button>
+	  <transition
+
+			v-on:enter="enter"
+			v-on:leave="leave"
+			v-bind:css="false">
+			<p v-if="show">hello</p>
+	  </transition>
+	</div>
+	<!--implement method enter and leave-->
+	<script>
+	new Vue ({
+		el: '#app',
+		data: {
+			show : false
+		},
+		methods: {
+			enter: function(el, done) {
+				Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300/* time appear*/})
+				Velocity(el, { fontSize: '1em' }, { complete: done })
+			},
+			leave: function (el, done) {
+				Velocity(el, {
+					rotateZ: '40deg',
+					translateY: '30px',
+					translateX: '30px',
+				}, { complete: done })
+			}
+		}
+	});
+	</script>
+</body>
+</html>

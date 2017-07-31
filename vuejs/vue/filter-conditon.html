@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js V-for_condition</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id ="app">
+	<ul>
+		<li v-for="n in evenNumbers">{{n}}</li>
+	</ul>
+	</div>
+	<script> 
+	new Vue ({
+		el: '#app',
+		data: {
+			numbers: [1,2,3,4,5]
+			},
+		computed: {
+			evenNumbers : function() {
+				return this.numbers.filter(function(number) {
+					return number%2 == 0
+				})
+			}
+		}
+	});
+	</script>
+</body>
+</html>

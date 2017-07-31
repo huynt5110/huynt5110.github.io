@@ -2,12 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>asdsa</title>
+		<title>DemoAjax</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div id="container">
-			<form name="form" action="action.php">
+			<h3 id="ajax_result">Ajax result : name</h3>
+			<form name="form" action="#"> 
 				<table>
 					<tr>
 						<td>Name</td>
@@ -26,17 +27,12 @@
 					</tr>
 					<tr>
 						<td>Birthday</td>
-						<td> <input id = "birthday" name= "birthday" type="text" onclick="return callfunction()" ></td>
+						<td> <input id = "birthday" name= "birthday" type="text" onclick="return callfunction();return false" ></td>
 						<td><span id="span_birthday"></span></td>
 					</tr>
-					<tr>
-					<td><br/></td>
-						<td>
-							<div id = "div_contain"></div>
-						</td>
-					</tr>
 				</table>
-				<input type="submit" value="Check" onclick=" return checkall()"/>
+				<div id = "div_contain"></div>
+				<input type="submit" value="Check" onclick="checkall();return false"/>
 			</form>
 		</div>
 		<script src="java.js"></script>
