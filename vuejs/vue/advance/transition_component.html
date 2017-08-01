@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+	<script src="https://unpkg.com/tween.js@16.3.4"></script>
+</head>
+<body>
+	<div id="app">
+		<input v-model.number="firstNumber" type="number" >+
+		<input v-model.number="secondNumber" type="number" > = 
+		{{result}}
+		  <p>
+			<div_component v-bind:value="firstNumber"></div_component> +
+			<div_component v-bind:value="secondNumber"></div_component> =
+			<div_component v-bind:value="result"></div_component>
+		  </p>
+	</div>
+	<script>
+	Vue.component('div_component', {
+	  template: '<span>{{ tweeningValue }}</span>',
+	  props: {
+		value: {
+		  type: Number,
+		  required: true
+		}
+	  },
+	  data: function () {
+		return {
+		  tweeningValue: 0
+		}
+	  },
+	  watch: {
+		value: function (newValue, oldValue) {
+		  this.tween(oldValue, newValue)
+		}
+	  },
+	  methods: {
+		tween: function (startValue, endValue) {
+		  var vm = this
+		  var animationFrame
+		  function animate (time) {
+			TWEEN.update(time)
+			animationFrame = requestAnimationFrame(animate)
+		  }
+		  new TWEEN.Tween({ tweeningValue: startValue })
+			.to({ tweeningValue: endValue }, 500)
+			.onUpdate(function () {
+			  vm.tweeningValue = this.tweeningValue.toFixed(0)
+			})
+			.onComplete(function () {
+			  cancelAnimationFrame(animationFrame)
+			})
+			.start()
+		  animationFrame = requestAnimationFrame(animate)
+		}
+	  }
+	})	
+	new Vue({
+		el: '#app',
+		data: {
+			firstNumber: 20,
+			secondNumber: 40
+		},
+		computed: {
+			result: function() {
+				return this.firstNumber + this.secondNumber
+			}
+		}
+	});
+	</script>
+</body>
+</html>
