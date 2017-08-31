@@ -1,0 +1,5 @@
+if you wanna run app:
+-Rename folder -> Myapp
+-Open cmd (windows)
+-Cordova run android to run on android device/simulator
+-Cordova run browser to run on web.
