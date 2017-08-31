@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "C:\\Users\\huypc\\Desktop\\cordova\\Myapp\\node_modules"
+      "C:\\Users\\huypc\\Desktop\\New folder\\demo\\node_modules"
     ]
   ],
   "_from": "cordova-plugin-battery-status@latest",
@@ -45,7 +45,7 @@
   "_shasum": "73a576afc0a61a9dd29aff7765907ecac0c9f1f9",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-battery-status",
-  "_where": "C:\\Users\\huypc\\Desktop\\cordova\\Myapp\\node_modules",
+  "_where": "C:\\Users\\huypc\\Desktop\\New folder\\demo\\node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },
