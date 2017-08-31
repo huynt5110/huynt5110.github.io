@@ -3,6 +3,8 @@ var app = {
   myMedia: null,
   src: null,
   volumeValue: 0.5,
+  srcAndroid: "/android_asset/www/img/m.mp3",
+  srcBrowser: "../img/m.mp3",
   // Application Constructor
   initialize: function () {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -24,8 +26,8 @@ var app = {
     app.platform = device.platform;
     alert(app.platform);
     switch (app.platform) {
-      case "Android": app.src = "/android_asset/www/img/m.mp3"; break;
-      case "browser": app.src = "../img/m.mp3"; break;
+      case "Android": app.src = srcAndroid; break;
+      case "browser": app.src = srcBrowser; break;
     }
   },
   // run after media finish
