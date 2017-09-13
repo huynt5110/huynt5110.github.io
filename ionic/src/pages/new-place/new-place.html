@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add place</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="onAddPlace(a.value)" #a="ngForm">
+    <ion-item>
+      <ion-label>Tilte</ion-label>
+      <ion-input type="text" name="title" ngModel required></ion-input>
+    </ion-item>
+    <button ion-button block type="submit" >App Place</button>
+  </form>
+</ion-content>
+<ion-list>
+    <ion-item>
+      <ion-icon name="leaf" item-start></ion-icon>
+        Herbology
+      <ion-icon name="rose" item-end></ion-icon>
+    </ion-item>
+  </ion-list>
