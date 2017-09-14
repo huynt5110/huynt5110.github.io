@@ -9,13 +9,15 @@ import { NewPlacePage} from '../pages/new-place/new-place';
 import { PlacesService} from "../services/places.service";
 import { SearchPage} from '../pages/search/search';
 import { SegmentsPage} from '../pages/segments/segments';
+import { SlidePage} from '../pages/slide/slide';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     NewPlacePage,
     SearchPage,
-    SegmentsPage
+    SegmentsPage,
+    SlidePage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { SegmentsPage} from '../pages/segments/segments';
     HomePage,
     NewPlacePage,
     SearchPage,
-    SegmentsPage
+    SegmentsPage,
+    SlidePage
   ],
   providers: [
     PlacesService,

@@ -4,25 +4,45 @@ import { ActionSheetController, ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { NewPlacePage } from '../new-place/new-place';
 import { PlacesService } from "../../services/places.service";
-import { SearchPage} from '../search/search';
+import { SearchPage } from '../search/search';
 import { PopoverController } from 'ionic-angular';
-import { SegmentsPage} from '../segments/segments';
+import { SegmentsPage } from '../segments/segments';
+import { SlidePage} from '../slide/slide';
+import { ToastController } from 'ionic-angular';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  public value: boolean;
   places: { title: string }[] = [];
-  constructor(public popoverCtrl: PopoverController, public navCtrl: NavController, private placesService: PlacesService, public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
+  constructor(public toastCtrl: ToastController,public popoverCtrl: PopoverController, public navCtrl: NavController, private placesService: PlacesService, public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
+  }
+  onChange(carbrand) {
+    console.log(carbrand)
+  }
+  toggleChange(event){
+    console.log(event)
+  }
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'User was deleted successfully',
+      duration: 3000,
+      position: "middle"
+    });
+    toast.present();
   }
   toSegments() {
     this.navCtrl.push(SegmentsPage);
+  }
+  toSlide() {
+    this.navCtrl.push(SlidePage);
   }
   removeFromList(value) {
     let index = this.places.indexOf(value);
     this.placesService.removePlaces(index);
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
+    this.presentToast()
   }
   presentPopover() {
     let popover = this.popoverCtrl.create(SearchPage);
