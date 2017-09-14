@@ -26,7 +26,7 @@ var app = {
     app.states[Connection.CELL]     = 'Cell generic connection';
     app.states[Connection.NONE]     = 'No network connection';
 
-    alert('Connection type: ' + app.states[networkState]);
+    alert('Connection type: ' + app.states[app.networkState]);
   },
   onDeviceReady: function () {
     document.addEventListener("offline",app.alertoffline,false);

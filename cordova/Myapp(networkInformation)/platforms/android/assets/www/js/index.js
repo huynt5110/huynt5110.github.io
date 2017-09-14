@@ -31,6 +31,7 @@ var app = {
   onDeviceReady: function () {
     document.addEventListener("offline",app.alertoffline,false);
     document.addEventListener("online",app.alertonline,false);
+    console.log("sadasdas");
     document.getElementById("networkInfo").addEventListener("click",app.checkConnection,false);
     this.receivedEvent('deviceready');
   },
