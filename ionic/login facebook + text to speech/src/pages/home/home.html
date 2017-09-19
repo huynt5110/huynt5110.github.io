@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button block (click)="login()">Login</button>
+  <ion-item>
+    <ion-label stacked>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="inputContent"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="speak(inputContent)">Speak</button>
+  <!-- <p id="Name"></p>
+  <p id="Email"></p>
+  <img id= "pic" target="pic1"/> -->
+</ion-content>
