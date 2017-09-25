@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Book List
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addSong()">
+            <ion-icon name="add" ></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>List</h2>
+  <ion-item>
+    <ion-label floating>Input</ion-label>
+    <ion-input [(ngModel)]="myInput"></ion-input>
+  </ion-item>
+  <button ion-button (click)="btnAdd()">
+      <ion-icon name="home"></ion-icon>
+      Submit
+  </button>
+  <ion-card>
+    <ion-card-header>
+      List of book
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let book of books">
+          <ion-checkbox color="dark" checked="false" (ionChange)="datachanged($event,book)"></ion-checkbox>
+          <ion-label>
+            <div class="noteText">{{book.author}}</div>
+            <button clear ion-button icon-only (click)="removeFromList(book)" style="float:right;margin-top: 0px">
+                      <ion-icon class="imgList" name='close' end></ion-icon>
+                    </button>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
