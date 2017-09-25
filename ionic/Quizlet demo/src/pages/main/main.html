@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only>
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </button>
+    </ion-buttons>
+    <ion-title>Learning App</ion-title>
+    <div id="container">Welcome back,
+      <p id="userName"></p>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="abc">
+  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
+  <ion-item>
+    <p id="buttonContainer">
+      <button ion-button color="light" round>
+          <ion-icon name="home" ></ion-icon>
+        Learn</button>
+      <button ion-button color="secondary" round>
+          <ion-icon name="home"></ion-icon>Card</button>
+      <button ion-button color="danger" round>
+          <ion-icon name="home"></ion-icon>Match</button>
+      <button ion-button color="dark" round>
+          <ion-icon name="home"></ion-icon>Test</button>
+    </p>
+  </ion-item>
+  <ion-item>
+    <p style="float:left">Card</p>
+    <ion-badge item-end>You have
+      <p id="wordNumber"></p> word.</ion-badge>
+  </ion-item>
+  <ion-card>
+    <ion-card-content>
+      <ion-item *ngFor="let item of items">
+        <ion-label id="containerList">
+          {{ item.data.word }}
+          <span>{{ item.data.meaning }}</span>
+          <button ion-button icon-only style="float: right" (click)="speak(item.data.word)">
+            <ion-icon name="mic" isActive="false" ></ion-icon>
+          </button>
+          <button ion-button icon-only style="float: right" (click)="remove(item.$key)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-fab right bottom>
+  <button ion-fab color="danger" (click)="AddWord()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>

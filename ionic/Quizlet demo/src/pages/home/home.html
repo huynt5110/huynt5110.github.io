@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Remember Vocal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <ion-card>
+    <ion-card-content>
+      <img src="assets/img/logo.jpeg" target="logo" />
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label floating primary>Username</ion-label>
+          <ion-input [(ngModel)]="userInput.usernameinput" formControlName="usernameinput" type="text" id="usernameinput" spellcheck="false" autocapitalize="off">
+          </ion-input>
+        </ion-item>
+        <p *ngIf="!isValid('usernameinput')" danger padding-left>Invalid Syntax (not contain speacial character)</p>
+        <ion-item>
+          <ion-label floating primary>Password</ion-label>
+          <ion-input [(ngModel)]="userInput.passwordinput" formControlName="passwordinput" type="password" id="passwordinput" spellcheck="false" autocapitalize="off">
+          </ion-input>
+        </ion-item>
+        <p *ngIf="!isValid('passwordinput')" danger padding-left>Invalid Syntax</p>
+        <button ion-button type="submit" block primary >Login</button>
+        <!-- [disabled]="!myForm.valid" -->
+      </form>
+      <ion-item>Didn't have an account yet? <button id="btnRegister" (click)="resgister()">Resister now !</button></ion-item>
+    </ion-card-content>
+  </ion-card>
+  <!-- footer button -->
+  <ion-title>Fast login with facebook</ion-title>
+  <button id="btnFacebook" ion-button icon-right (click)="login()" block>     
+    <ion-icon name="logo-facebook"></ion-icon>
+    Login
+  </button>
+</ion-content>
