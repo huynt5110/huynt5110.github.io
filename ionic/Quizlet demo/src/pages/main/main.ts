@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { NewWordPage } from '../new-word/new-word'
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { LearnPage} from '../learn/learn';
 /**
  * Generated class for the MainPage page.
  *
@@ -27,7 +28,6 @@ export class MainPage {
     this.db.list("/user/abc/word").subscribe(_data => {
       this.items = _data
       this.firebaseData = _data
-      console.log(_data)
       document.getElementById("wordNumber").innerHTML = this.items.length.toString();
     })
     let dataUser = this.navParams.data;
@@ -75,11 +75,13 @@ export class MainPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        console.log("val",val)
-        console.log(item["data"]["word"].toLowerCase().indexOf(val.toLowerCase()) > -1);
         return (item["data"]["word"].toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
     document.getElementById("wordNumber").innerHTML = this.items.length.toString();
+  }
+  // switch to LeanPage
+  toLearnPage() {
+    this.navCtrl.push(LearnPage,this.firebaseData)
   }
 }

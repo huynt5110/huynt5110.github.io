@@ -15,6 +15,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NewWordPage} from '../pages/new-word/new-word';
+import { LearnPage} from '../pages/learn/learn';
+import { NotificationPage } from '../pages/notification/notification'
 firebase.initializeApp({
     apiKey: "AIzaSyAYVDmPsZTRcnvb1g0t56YEf3KAV7IpVtI",
     authDomain: "facebooklogin-ded06.firebaseapp.com",
@@ -29,7 +31,9 @@ firebase.initializeApp({
     HomePage,
     RegisterPage,
     MainPage,
-    NewWordPage
+    NewWordPage,
+    LearnPage,
+    NotificationPage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,9 @@ firebase.initializeApp({
     HomePage,
     RegisterPage,
     NewWordPage,
-    MainPage
+    MainPage,
+    NotificationPage,
+    LearnPage
   ],
   providers: [
     StatusBar,
