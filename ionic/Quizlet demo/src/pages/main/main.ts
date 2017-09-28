@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 import { NewWordPage } from '../new-word/new-word'
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { LearnPage} from '../learn/learn';
-/**
- * Generated class for the MainPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { LearnPage } from '../learn/learn';
+import { CardPage } from '../card/card'
+import { MatchPage } from '../match/match';
 @IonicPage()
 @Component({
   selector: 'page-main',
@@ -19,11 +14,9 @@ import { LearnPage} from '../learn/learn';
 export class MainPage {
   items: { title: string }[] = [];
   firebaseData: { title: string }[] = [];
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts: TextToSpeech, private db: AngularFireDatabase) {
+  constructor(public modalCtrl: ModalController, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts: TextToSpeech, private db: AngularFireDatabase) {
   }
-  ionViewWillEnter() {
-
-  }
+  ionViewWillEnter() { }
   ionViewDidLoad() {
     this.db.list("/user/abc/word").subscribe(_data => {
       this.items = _data
@@ -32,14 +25,12 @@ export class MainPage {
     })
     let dataUser = this.navParams.data;
     // document.getElementById("userName").innerHTML = dataUser[5]["$value"];
-
   }
   AddWord() {
     this.navCtrl.push(NewWordPage);
   }
   // speak contetnt user input
   speak(inputContent) {
-    console.log(inputContent)
     this.tts.speak(inputContent)
       .then(() => console.log("success"))
       .catch((reason: any) => console.log(reason));
@@ -82,6 +73,14 @@ export class MainPage {
   }
   // switch to LeanPage
   toLearnPage() {
-    this.navCtrl.push(LearnPage,this.firebaseData)
+    this.navCtrl.push(LearnPage, this.firebaseData)
+  }
+  // switch to CardPage
+  toCardPage() {
+    let modal = this.modalCtrl.create(CardPage);
+    modal.present();
+  }
+  toMatchPage() {
+    this.navCtrl.push(MatchPage, this.firebaseData);
   }
 }

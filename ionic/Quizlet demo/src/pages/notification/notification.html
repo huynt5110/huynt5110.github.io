@@ -14,8 +14,14 @@
 
 
 <ion-content padding>
-  <p>Correct word {{number}}</p>
-    <button ion-button (click)="dismiss()">
+  <div *ngIf="page == 'match'" danger padding-left>
+    <p>Error times: {{number}}</p>
+    <p>Times: {{time}}</p>
+  </div>
+  <div *ngIf="page == 'learn'">
+    <p>Correct word {{number}}</p>
+  </div>
+  <button ion-button (click)="dismiss()">
       Back
     </button>
 </ion-content>

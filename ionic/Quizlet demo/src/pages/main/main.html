@@ -11,17 +11,16 @@
     </div>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding id="abc">
-  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-item>
     <p id="buttonContainer">
-      <button ion-button color="light" round (click) = "toLearnPage()">
+      <button ion-button color="light" round (click)="toLearnPage()">
           <ion-icon name="home" ></ion-icon>
         Learn</button>
-      <button ion-button color="secondary" round>
+      <button ion-button color="secondary" round (click)="toCardPage()">
           <ion-icon name="home"></ion-icon>Card</button>
-      <button ion-button color="danger" round>
+      <button ion-button color="danger" round (click)="toMatchPage()">
           <ion-icon name="home"></ion-icon>Match</button>
       <button ion-button color="dark" round>
           <ion-icon name="home"></ion-icon>Test</button>

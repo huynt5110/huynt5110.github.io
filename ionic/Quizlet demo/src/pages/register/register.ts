@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
 import { AngularFireDatabase} from 'angularfire2/database';
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-register',
@@ -48,7 +41,6 @@ export class RegisterPage {
     })
     
   }
-
   usernameValidator(control: FormControl): {[s:string]: boolean} {
     // contain a-z A-Z and number 0-9
     if (!control.value.match("^[a-zA-Z 0-9 ,.'-]+$")) {
@@ -60,7 +52,6 @@ export class RegisterPage {
       return { invalidName: true };
     }
   }
-
   phoneValidator(control: FormControl): { [s: string]: boolean } {
     if (control.value !== '') {
       if (!control.value.match('\\(?\\d{3}\\)?-? *\\d{3}-? *-?\\d{4}')) {
@@ -68,7 +59,6 @@ export class RegisterPage {
       }
     }
   }
-
   emailValidator(control: FormControl): { [s: string]: boolean } {
     // in temporary, just recognize @gmail.com and @yahoo.com
     if (!(control.value.toLowerCase().match('^[a-zA-Z]\\w*@gmail\\.com$') || control.value.toLowerCase().match('^[a-zA-Z]\\w*@yahoo\\.com$'))) {

@@ -1,0 +1,14 @@
+<ion-list>
+  <ion-item *ngFor="let place of data; let i = index">
+    <div class="flip-container" (click)="flip(i)">
+      <div class="flipper">
+        <div class="front">
+          {{place.data.word}}
+        </div>
+        <div class="back">
+          {{place.data.meaning}}
+        </div>
+      </div>
+    </div>
+  </ion-item>
+</ion-list>

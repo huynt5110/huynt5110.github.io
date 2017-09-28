@@ -7,25 +7,26 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'new-word.html',
 })
 export class NewWordPage {
-  title;word;meaning
-  constructor(public navCtrl: NavController, public navParams: NavParams,private db: AngularFireDatabase) {
+  title; word; meaning
+  constructor(public navCtrl: NavController, public navParams: NavParams, private db: AngularFireDatabase) {
   }
   addNewWord() {
     let word = this.word;
     let meaning = this.meaning;
-    let title  = this.title
+    let title = this.title
     var dateObj = new Date();
+    //  get date month year , user add new word
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
     let newdate = year + "/" + month + "/" + day;
     let _data = {
-      "data" : { "word":word,"meaning" : meaning},
+      "data": { "word": word, "meaning": meaning },
       "title": title,
-      "date" : newdate
+      "date": newdate
     }
-    console.log(_data);
-    this.db.list("/user/abc/word").push(_data).then(()=>{
+    //get push word to firebase,and auto generate key
+    this.db.list("/user/abc/word").push(_data).then(() => {
       this.navCtrl.pop();
     }).catch((error) => {
       console.log(error);

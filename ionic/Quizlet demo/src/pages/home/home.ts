@@ -70,7 +70,6 @@ export class HomePage {
       })
     })
   }
-  
   // switch to register page
   resgister() {
     this.navCtrl.push(RegisterPage);
